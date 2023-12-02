@@ -3,7 +3,6 @@ import java.io.IOException;
 import java.lang.System;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
 
 public class question2 {
 
@@ -36,48 +35,32 @@ public class question2 {
     }
 
     public boolean singleGameExists(String str){
-        boolean existsRed = false;
-        boolean existsGreen = false;
-        boolean existsBlue = false;
+        boolean existsRed = true;
+        boolean existsGreen = true;
+        boolean existsBlue = true;
         
         String[] newStr = str.split(" ");
         for (int i = 0; i < newStr.length; i++) {
             if (newStr[i].startsWith(red.color)) {
-                if (Integer.parseInt(newStr[i-1]) <= red.amount)
-                 {
-                    existsRed = true;
-                }
-                else{
+                if (Integer.parseInt(newStr[i-1]) > red.amount){
                     existsRed = false;
                     break;
                 }
-                
             }
             else if (newStr[i].startsWith(green.color)) {
-                if (Integer.parseInt(newStr[i-1]) <= green.amount) {
-                    existsGreen = true;
-                }
-                else{
+                if (Integer.parseInt(newStr[i-1]) > green.amount) {
                     existsGreen = false;
                     break;
                 }
-
-            }
-
+            }    
             else if (newStr[i].startsWith(blue.color)) {
-                if (Integer.parseInt(newStr[i-1]) <= blue.amount) {
-                    existsBlue = true;
-                }
-                else{
+                if (Integer.parseInt(newStr[i-1]) > blue.amount) {
                     existsBlue = false;
                     break;
-                }
+                 }
             }
-
         }
         return existsRed && existsGreen && existsBlue;
-
-
     }
     //----------------------------------------Part B-------------------------------------------------//
 
