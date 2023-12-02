@@ -1,13 +1,14 @@
+package AOC23;
 import java.io.IOException;
 import java.lang.System;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 
-public class prep_question {
+public class question1 {
     public static void main(String[] args) throws IOException{
 
-        new prep_question().Program();
+        new question1().Program();
     }
 
     public String[] stringDigits = new String[]{"one","two","three","four","five","six","seven","eight","nine"};
